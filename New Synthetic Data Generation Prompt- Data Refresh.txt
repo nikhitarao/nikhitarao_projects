@@ -1,0 +1,340 @@
+I want Python Code to generate synthetic data for AUTO_INSURANCE_AGENT_MASTER as per below requirements. 
+
+Base Tables provided
+1. uscities which provides relation between STATE, COUNTY, CITY
+2. AUTO_MAKE_MODEL which provides relation between AUTO_MAKE and AUTO_MODEL
+
+Table Name: AUTO_INSURANCE_AGENT_MASTER
+Date Format: YYYY-MM-DD
+Number of Records: Base year 2015- 497 records. Subsequent years increase in number of records by random percentage from 7.5% to 15%. 
+Column Name: 
+1. AGENT_ID- Serial 6 digit unique number starting with AG. Example AG716260
+2. AGENT_ORIGIN_DATE- Random date from 01-January-2015 to 31-Dec-2024. 
+3. AGENT_TYPE- Random choice between "CAPTIVE" and "INDEPENDENT". Proportion random for each year of AGENT_ORIGIN_DATE "CAPTIVE" between 5% to 15%. Rest "INDEPENDENT". 
+4. AGENT_STATUS- Random choice between "ACTIVE", "INACTIVE" and "LOST". AGENT_TYPE "INDEPENDENT" can only have "ACTIVE" and "INACTIVE" in proportion of 65% "ACTIVE" and rest "INACTIVE". AGENT_TYPE "CAPTIVE" can have "ACTIVE", "INACTIVE" and "LOST" in proportion of 85% "ACTIVE", 10% "INACTIVE" and rest "LOST".  
+5. AGENT_INACTIVE_FROM- Only for "INACTIVE" AGENT_STATUS. Random date from AGENT_ORIGIN_DATE + 18 months till 31-Dec-2024. 
+6. AGENT_STATE- Value is always "Texas".
+7. AGENT_COUNTY- Random COUNTY from uscities table for STATE "Texas"
+8. AGENT_CITY- Random CITY from uscities table for STATE "Texas" and AGENT_COUNTY value as COUNTY
+9. AGENT_CATEGORY- Random choice from "SILVER" with 60%, "GOLD" with 25%, and rest "PLATINUM" with for each year. 
+10. AGENT_COMMISSION_RATE- Random percentage with 2 decimal places. Random percentage from 5% to 10% for "SILVER", random percentage from 11% to 15% for "GOLD", random percentage from 16% to 20% for "PLATINUM". 
+11. AGENT_PREMIUM_DISCOUNT_RATE- Random percentage with 2 decimal places. Random percentage from 5% to 25% for "SILVER", random percentage from 26% to 30% for "GOLD", random percentage from 31% to 45%. 
+12. AGENT_LOSS_REASON- Only for "LOST" AGENT_SATUS. Random choice from "Better Commissions from Competitor" with 55%, "Lack of Operational/Claims Support" 15%, rest "Lack of Premium Support". 
+13. AGENT_LOST_TO- Only for "LOST" AGENT_SATUS. Random choice from "Competitor A" with 63.74%, "Competitor B" 11.77%, "Competitor C" 11.77% and rest "Competitor D". 
+
+File path for all tables and save location file path is C:/Users/10741867/OneDrive - LTIMindtree/Documents/Datasets/Solution Datasets/Solution 1 - PNC Quote Conversion and Prioritization/Datasets/Regenerated Datasets/. 
+____________________________________________________________________________________________________________________________________________________________
+ 
+I want Python Code to generate synthetic data for AUTO_INSURANCE_POLICY_MASTER as per below requirements. 
+
+Base Tables provided
+1. uscities which provides relation between STATE, COUNTY, CITY
+2. AUTO_MAKE_MODEL which provides relation between AUTO_MAKE and AUTO_MODEL
+3. AUTO_INSURANCE_AGENT_MASTER
+ 
+I want Python Code to generate synthetic data for AUTO_INSURANCE_POLICY_MASTER as per below requirements. 
+Table Name: AUTO_INSURANCE_POLICY_MASTER
+Date Format: YYYY-MM-DD
+Number of Records: Base year 2015- 55011 records. Subsequent years increase in number of records by random percentage from 7.5% to 15%. 
+Column Name: 
+1. POLICY_NUMBER- Serial 8 digit unique number starting with P. Example P71626089
+2. POLICY_BIND_DATE- Random date from 01-January-2015 to 31-Dec-2024. Base year 2015- 35011 records. Subsequent years increase in number of records by random percentage from 7.5% to 15%.
+3. AUTO_MAKE- Random AUTO_MAKE from AUTO_MAKE_MODEL table
+4. AUTO_MODEL- Random AUTO_MODEL from AUTO_MAKE_MODEL table as per AUTO_MAKE
+5. POLICY_CSL- Random choice between "100/300" 47%, "250/500" 38%, rest "500/1000"
+6. POLICY_DEDUCTIBLE- Random choice between 250 with 15%, 500 with 45%, 1000 with 30%, and rest 2000 for each value of POLICY_CSL. 
+7. NO_OF_DRIVERS- Random choice between 1, 2, 3, 4. 1 having highest probability, 2 little less probability, 3 even lesser probability and 4 least probability. 
+8. COMPREHENSIVE_COVER- Random choice between "YES" with 85.46% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+9. COLLISION_COVER- Random choice between "YES" with 67.88% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+
+10. UNINSURED_MOTORIST- Random choice between "YES" with 43.67% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+11. MEDICAL_BENEFITS- Random choice between "YES" with 23.89% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+12. PIP_COVER- Random choice between "YES" with 67.21% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+13. ACCIDENT_FORGIVENESS- Random choice between "YES" with 24.68% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.  
+14. ROADSIDE_ASSISTANCE- Random choice between "YES" with 74.32% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.  
+15. LOSS_OF_USE- Random choice between "YES" with 29.13% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+16. ANTI_THEFT_DEVICE- Random choice between "YES" with 29.13% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+17. SAFETY_SCORE- Random choice between NULL and random percentage between 15% to 97%. NULL being 78% in base year, rest random percentage. "NULL" proportion changes by +/- random percentage from 7.5% to 15%. 
+18. UMBRELLA_LIMIT- Random choice between NULL and random integer 1000000, 2500000, 5000000 and 7500000. NULL being 88% in base year, rest random integer in varying proportion. "NULL" proportion changes by +/- random percentage from 7.5% to 15%.
+19. POLICY_PREMIUM- BASE_PREMIUM is random integer from 750 to 2500. COVER_PREMIUM = Sum of random integers ranging from 50 to 350 for each "YES" in COMPREHENSIVE_COVER, COLLISION_COVER, UNINSURED_MOTORIST, MEDICAL_BENEFITS, PIP_COVER, ACCIDENT_FORGIVENESS, ROADSIDE_ASSISTANCE, ANTI_THEFT_DEVICE. SAFETY_PREMIUM = SAFETY_SCORE * 100. UMBRELLA_PREMIUM = 250 for 1000000, 500 for 2500000, 750 for 5000000 and 1000 for 7500000. POLICY_PREMIUM = BASE_PREMIUM + COVER_PREMIUM - SAFETY PREMIUM + UMBRELLA PREMIUM. POLICY_PREMIUM should be positive only. Value 750 if calculated value is 0 or negative. 
+20. CUSTOMER_ID- Serial 6 digit unique number starting with CUST. Example CUST716260
+21. AGENT_ID- Random AGENT_ID from AUTO_INSURANCE_AGENT_MASTER table provided AGENT_INACTIVE_FROM is NULL or AGENT_INACTIVE_FROM is less than POLICY_BIND_DATE. 
+22. POLICY_STATE- As per AGENT_STATE for relevant AGENT_ID
+23. POLICY_CITY- As per AGENT_COUNTY for relevant AGENT_ID
+24. POLICY_COUNTY- As per AGENT_CITY for relevant AGENT_ID
+
+File path for all tables and save location file path is C:/Users/10741867/OneDrive - LTIMindtree/Documents/Datasets/Solution Datasets/Solution 1 - PNC Quote Conversion and Prioritization/Datasets/Regenerated Datasets/. 
+
+____________________________________________________________________________________________________________________________________________________________
+
+I want vectorized Python Code to generate synthetic data for AUTO_INSURANCE_CLAIMS_MASTER as per below requirements. All dates mentioned from all table are in YYYY-MM-DD format. 
+
+Base Tables provided
+1. uscities which provides relation between STATE, COUNTY, CITY
+2. AUTO_MAKE_MODEL which provides relation between AUTO_MAKE and AUTO_MODEL
+3. AUTO_INSURANCE_AGENT_MASTER
+4. AUTO_INSURANCE_POLICY_MASTER
+
+Table Name: AUTO_INSURANCE_CLAIMS_MASTER_BASE
+Date format: YYYY-MM-DD
+Number of Records: 10% of each year records in AUTO_INSURANCE_POLICY_MASTER 
+Column Name: 
+1. CLAIMS_NUMBER- Serial 8 digit unique number starting with P. Example P71626089
+2. INCIDENT_DATE- Random date from 01-January-2015 to 31-Dec-2024. 10% of each year records in AUTO_INSURANCE_POLICY_MASTER 
+3. POLICY_NUMBER- Random POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER table from the year of INCIDENT_DATE provided that INCIDENT_DATE > POLICY_BIND_DATE from AUTO_INSURANCE_POLICY_MASTER table.  
+4. CLAIM_REPORTING_DATE- INCIDENT_DATE + random number of days from 0 to 15 days. CLAIM_REPORTING_DATE >= INCIDENT_DATE. 
+5. INCIDENT_TYPE- Random choice between "Vehicle Theft" with 21%, "Parked Car" with 17%, "Single Vehicle Collision" with 45%, and rest "Multi Vehicle Collision" for base year. Each year the probability changes with +/- 3% to 15%. Ensure that the probabilities sum to 1. 
+6. COLLISION_TYPE- Details not Available" for all "Vehicle Theft", "Side Collision" for all "Parked Car". Random choice between "Rear Collision" with 45%, and rest "Front Collision" for base year. Each year the probability distribution changes. Ensure that the probabilities sum to 1.  
+7. LOSS_TYPE- For all INCICENT_TYPE "Vehicle Theft" LOSS_TYPE is "Total Loss". LOSS_TYPE is "Trivial Damage" for all "Parked Car" and 35% "Single Vehicle Collision", "Minor Damage" for 40% "Single Vehicle Collison" INCIDENT_TYPE, LOSS_TYPE is "Major Damage" for rest "Single Vehicle Collision" and for 65% of "Multi Vehicle Collision" INCIDENT_TYPE, LOSS_TYPE is "Total Loss" for rest "Multi Vehicle Collision" INCIDENT_TYPE. 
+8. AUTHORITIES_CONTACTED- "Police" for all "Vehicle Theft". "Police" for 65% "Multi Vehicle Collision", "Fire" for 15% " Multi Vehicle Collision", "Ambulance" for rest "Multi Vehicle Collision". "Police" for 35% "Single Vehicle Collision", "Fire" for 5% "Single Vehicle Collision", "Ambulance" for 20% "Single Vehicle Collision", rest NULL for "Single Vehicle Collision". NULL for "Parked Car". 
+9. INCIDENT_STATE- As per POLICY_STATE for relevant POLICY_NUMBER
+10. INCIDENT_CITY- As per POLICY_COUNTY for relevant POLICY_NUMBER
+11. INCIDENT_COUNTY- As per POLICY_CITY for relevant POLICY_NUMBER
+12. INCIDENT_TIME_OF_DAY- For "Vehicle Theft" "Early Morning Hours" with 35%, "Morning to Noon" with 20%, "Afternoon Hours" with 15%, and rest "Night Time". For "Parked Car" "Early Morning Hours" with 5%, "Morning to Noon" with 35%, "Afternoon Hours" with 30%, and rest "Night Time". For "Single Vehicle Collision" "Early Morning Hours" with 20%, "Morning to Noon" with 25%, "Afternoon Hours" with 15%, and rest "Night Time". For "Multi Vehicle Collision" "Early Morning Hours" with 5%, "Morning to Noon" with 35%, "Afternoon Hours" with 30%, and rest "Night Time".
+13. NUMBER_OF_VEHICLES_INVOLVED- NULL for "Vehicle Theft", "Parked Car". 1 for "Single Vehicle Collision". For "Multi Vehicle Collision" random integer from 2 with 45%, 3 with 30%, and rest 4. 
+14. PROPERTY_DAMAGE- "Property Damage" for all "Multi Vehicle Collision". "Property Damage" for 35% "Single Vehicle Collision", rest "No Property Damage". All others "No Property Damage".
+15. INJURY_DAMAGE- "Injury Damage" for all "Ambulance", "Fire" and "Multi Vehicle Collision". "Injury Damage" for 55% "Single Vehicle Collision", rest "No Injury Damage". "No Injury Damage" for "Parked Car" and "Vehicle Theft". 
+
+File path for all tables and save location file path is C:/Users/10741867/OneDrive - LTIMindtree/Documents/Datasets/Solution Datasets/Solution 1 - PNC Quote Conversion and Prioritization/Datasets/Regenerated Datasets/. 
+
+____________________________________________________________________________________________________________________________________________________________
+
+I want vectorized Python Code to generate synthetic data for AUTO_INSURANCE_CLAIMS_MASTER as per below requirements. All dates mentioned from all table are in YYYY-MM-DD format. 
+
+Base Tables provided
+1. AUTO_INSURANCE_CLAIMS_MASTER_BASE
+2. AUTO_INSURANCE_POLICY_MASTER
+
+Table Name: AUTO_INSURANCE_CLAIMS_MASTER
+Date format: YYYY-MM-DD
+Number of Records: For each record in AUTO_INSURANCE_CLAIMS_MASTER_BASE add these columns
+Column Name: 
+1. TOTAL_CLAIM_AMOUNT- CSL is first 3 digits before "/" from POLICY_CSL for relevant POLICY_NUMBER multiplied by 100000. For LOSS_TYPE "Trivial Damage" random integer between 150 to 5000. For LOSS_TYPE "Minor Damage" random integer from 5001 to 10000. For LOSS_TYPE "Major Damage" random integer from 10001 to 74% of CSL. For LOSS_TYPE "Total Loss" CSL for "Vehicle Theft", and random integer from 75% to 100% of CSL for rest. 
+2. INJURY_CLAIM_AMOUNT- For "No Injury Damage" NULL. For "Injury Damage" 25% of TOTAL_CLAIM_AMOUNT. 
+3. PROPERTY_CLAIM_AMOUNT- For "No Property Damage" NULL. For "Property Damage" 30% of TOTAL_CLAIM_AMOUNT. 
+4. VEHICLE_CLAIM_AMOUNT- TOTAL_CLAIM_AMOUNT - INJURY_CLAIM_AMOUNT - PROPERTY_CLAIM_AMOUNT
+5. DEDUCTIBLE- As per POLICY_DEDUCTIBLE for relevant POLICY_NUMBER
+6. TOTAL_PAID_CLAIM_AMOUNT- 0 for negative and 0 values of TOTAL_CLAIM_AMOUNT - DEDUCTIBLE. For 85% records of remaining records value of TOTAL_CLAIM_AMOUNT - DEDUCTIBLE if positive. Rest 0. 
+7. CLAIM_STATUS- "Within Deductible" where negative or 0 value of TOTAL_CLAIM_AMOUNT - DEDUCTIBLE. "Rejected" where positive value of TOTAL_CLAIM_AMOUNT - DEDUCTIBLE and TOTAL_PAID_CLAIM_AMOUNT is 0. "Paid" for rest. 
+8. DOCS_SUBMISSION_DATE- Random Date from CLAIM_REPORTING_DATE to CLAIM_REPORTING_DATE + 7 days. DOCS_SUBMISSION_DATE >= CLAIM_REPORTING_DATE. 
+9. ACKNOWLEDGEMENT_DATE- Random Date from DOCS_SUBMISSION_DATE to DOCS_SUBMISSION_DATE + 3 days. ACKNOWLEDGEMENT_DATE >= DOCS_SUBMISSION_DATE. 
+10. DECISION_DATE- Random Date from ACKNOWLEDGEMENT_DATE to CLAIM_REPORTING_DATE + 35 days. DECISION_DATE >= ACKNOWLEDGMENT_DATE. 
+11. CLAIM_PAYMENT_DATE- For CLAIM_STATUS as "Paid" random Date from DECISION_DATE to CLAIM_REPORTING_DATE + 35 days. CLAIM_PAYMENT_DATE >= DECISION_DATE. Rest NULL. 
+
+File path for all tables and save location file path is C:/Users/10741867/OneDrive - LTIMindtree/Documents/Datasets/Solution Datasets/Solution 1 - PNC Quote Conversion and Prioritization/Datasets/Regenerated Datasets/. 
+
+____________________________________________________________________________________________________________________________________________________________I want Python Code to generate synthetic data for AUTO_INSURANCE_QUOTE_CONVERSION_MASTER as per below requirements. Derive the year from the APPLICATION_DATE which is a date column. Add a tqdm progress bar to the code. Ensure all date columns from Base Tables are converted to datetime beforehand. Vectorize the code for faster operation. 
+
+Base Tables provided
+1. uscities which provides relation between column names STATE, COUNTY, CITY
+2. AUTO_MAKE_MODEL which provides relation between AUTO_MAKE and AUTO_MODEL
+3. AUTO_INSURANCE_AGENT_MASTER
+4. AUTO_INSURANCE_POLICY_MASTER
+
+Table Name: AUTO_INSURANCE_QUOTE_CONVERSION_MASTER
+Date format: YYYY-MM-DD
+Number of Records: Total number of records for each year as per APPLICATION_DATE column will be ALL records from AUTO_INSURANCE_POLICY_MASTER for that year + 63% to 83% of total number of records for that year.
+Column Name: 
+1. APPLICATION_ID- Serial 8 digit unique number starting with APP. Example APP71626089
+2. APPLICATION_DATE- Random date from 01-January-2015 to 31-Dec-2024. Total number of records for each year of APPLICATION_DATE column will be all records from AUTO_INSURANCE_POLICY_MASTER for that year + 63% to 83% of total number of records for that year. APPLICATION_DATE should always be lesser than POLICY_BIND_DATE. 
+3. QUOTE_CONVERTED- For records from AUTO_INSURANCE_POLICY_MASTER "Quote Converted". For additional records "Quote not converted". 
+4. POLICY_NUMBER- For records from AUTO_INSURANCE_POLICY_MASTER with "Quote Converted" random unique POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest NULL.  
+5. CUSTOMER_ID- CUSTOMER_ID as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest NULL. 
+6. POLICY_PREMIUM- POLICY_PREMIUM as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest NULL.  
+7. POLICY_DEDUCTIBLE- POLICY_DEDUCTIBLE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest NULL.
+8. POLICY_CSL- POLICY_CSL as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest NULL.
+9. POLICY_BIND_DATE- POLICY_BIND_DATE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. Should always be lesser or equal to QUOTE_ACCEPTANCE_DATE. For rest NULL.
+10. AGENT_ID- AGENT_ID as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest random AGENT_ID from AUTO_INSURANCE_AGENT_MASTER table provided AGENT_INACTIVE_FROM is NULL or AGENT_INACTIVE_FROM is less than APPLICATION_DATE.
+11. PROSPECT_ID- Serial 8 digit unique number starting with PR. Example PR71626089
+12. PROSPECT_STATE- Always "Texas".
+13. PROSPECT_COUNTY- POLICY_COUNTY as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest random COUNTY from uscities table for STATE "Texas".
+14. PROSPECT_CITY- POLICY_CITY as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest random Random CITY from uscities table for STATE "Texas" and PROSPECT_COUNTY value as COUNTY.
+15. AUTO_MAKE- AUTO_MAKE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest random AUTO_MAKE from AUTO_MAKE_MODEL table. 
+16. AUTO_MODEL- AUTO_MODEL as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.For rest random AUTO_MODEL from AUTO_MAKE_MODEL table as per AUTO_MAKE. 
+17. EXPECTED_CSL- Value same as POLICY_CSL where POLICY_CSL is not NULL for this table. Where POLICY_CSL is NULL for this table, random choice between "100/300" 47%, "250/500" 38%, rest "500/1000".
+18. DEDUCTIBLE_LOOKED_FOR- Value same as POLICY_DEDUCTIBLE where POLICY_DEDUCTIBLE is not NULL for this table. Where POLICY_DEDUCTIBLE is NULL for this table, random choice between 250 with 15%, 500 with 45%, 1000 with 30%, and rest 2000 for each value of POLICY_CSL.
+19. EXPECTED_PREMIUM- Where POLICY_PREMIUM is not NULL in this table, EXPECTED_PREMIUM is POLICY_PREMIUM +/- 0% to 30%. Else, BASE_PREMIUM is random integer from 750 to 2500. COVER_PREMIUM = Sum of random integers ranging from 50 to 350 for each "YES" in COMPREHENSIVE_COVER, COLLISION_COVER, UNINSURED_MOTORIST, MEDICAL_BENEFITS, PIP_COVER, ACCIDENT_FORGIVENESS, ROADSIDE_ASSISTANCE, ANTI_THEFT_DEVICE. SAFETY_PREMIUM = SAFETY_SCORE * 1000. UMBRELLA_PREMIUM = 250 for 1000000, 500 for 2500000, 750 for 5000000 and 1000 for 7500000. POLICY_PREMIUM = BASE_PREMIUM + COVER_PREMIUM - SAFETY PREMIUM + UMBRELLA PREMIUM. EXPECTED_PREMIUM should be positive only. Value 750 if calculated value is 0 or negative. 
+20. CUSTOMER_ID- Serial 6 digit unique number starting with CUST. Example CUST716260 
+20. QUOTE_EXPECTED_BY_DATE- APPLICATION_DATE + random number of days between 3 to 10 days
+21. COMPETITION_LEVEL- Random choice for each year between "Low Competition" with 27%, "Medium Competition" with 57%, rest "High Competition". 
+22. PAST_THREE_YRS_NO_CLAIMS- Random choice between "0" with 21%, "1" with 17%, "2" with 45%, and rest "3 and above" for base year. Each year the probability changes with +/- 3% to 15%. Ensure that the probabilities sum to 1. 
+23. PAST_THREE_YRS_CLAIM_AMT- CSL is first 3 digits before "/" from EXPECTED_CSL multiplied by 100000. For PAST_THREE_YRS_NO_CLAIMS as 0, value is 0.  For PAST_THREE_YRS_NO_CLAIMS as 1, value is random integer from 0 to 45% * CSL. For PAST_THREE_YRS_NO_CLAIMS as 2, value is random integer from 25% * CSL to 65% * CSL. For PAST_THREE_YRS_NO_CLAIMS as "3 and above", value is random integer from 65% * CSL to CSL.
+24. NO_OF_DRIVERS- NO_OF_DRIVERS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, random choice between 1, 2, 3, 4. 1 having highest probability, 2 little less probability, 3 even lesser probability and 4 least probability. 
+25. COMPREHENSIVE_COVER- COMPREHENSIVE_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, random choice between "YES" with 85.46% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.
+26. COLLISION_COVER- COLLISION_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 67.88% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+27. UNINSURED_MOTORIST- UNINSURED_MOTORIST as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 43.67% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.
+28. MEDICAL_BENEFITS- MEDICAL_BENEFITS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 23.89% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+29. PIP_COVER- PIP_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 67.21% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.
+30. ACCIDENT_FORGIVENESS- ACCIDENT_FORGIVENESS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 24.68% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.  
+31. ROADSIDE_ASSISTANCE- ROADSIDE_ASSISTANCE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 74.32% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.  
+32. LOSS_OF_USE- LOSS_OF_USE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 29.13% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+33. ANTI_THEFT_DEVICE- ANTI_THEFT_DEVICE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 29.13% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+34. SAFETY_SCORE- SAFETY_SCORE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between NULL and random percentage between 15% to 97%. NULL being 78% in base year, rest random percentage. "NULL" proportion changes by +/- random percentage from 7.5% to 15%.
+35. QUOTE_DATE- QUOTE_EXPECTED_BY_DATE + random number of days between 0 to 3 days
+36. QUOTE_ACCEPTANCE_DATE- For QUOTE_CONVERTED as "Quote Converted", QUOTE_DATE + random number of days between 0 to 10 days. For rest, NULL. Should always be lesser than POLICY_BIND_DATE. 
+37. LOSS_REASON- For QUOTE_CONVERTED as "Quote not converted", random choice between "Lower Premium" with 32%, "Lower Deductible" with 18%, "Higher CSL" with 27%, and rest "Better Coverages" for base year. Each year the probability changes with +/- 3% to 15%. Ensure that the probabilities sum to 1. For QUOTE_CONVERTED as "Quote Converted" NULL.
+
+					________________________________________________________
+
+I want to generate new records in a separate dataframe called additional_df as per the below logic. Vectorize the code wherever possible. Give me the python code for the same. 
+
+Base Tables provided
+1. uscities which provides relation between column names STATE, COUNTY, CITY
+2. AUTO_MAKE_MODEL which provides relation between AUTO_MAKE and AUTO_MODEL
+3. AUTO_INSURANCE_AGENT_MASTER
+4. AUTO_INSURANCE_POLICY_MASTER
+
+Date format: YYYY-MM-DD. Date range for records in AUTO_INSURANCE_POLICY_MASTER is from 01-January-2015 to 31-Dec-2024. 
+Number of Records: ALL records from AUTO_INSURANCE_POLICY_MASTER for that year of APPLICATION_DATE
+Column Name: 
+1. APPLICATION_ID- Serial 8 digit unique number starting with APP in continuation in synthetic_df.
+2. APPLICATION_DATE- QUOTE_EXPECTED_BY_DATE - random number of days between 0 to 10 days. 
+3. QUOTE_CONVERTED- "Quote Converted". 
+4. POLICY_NUMBER- Random unique POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.   
+5. CUSTOMER_ID- CUSTOMER_ID as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+6. POLICY_PREMIUM- POLICY_PREMIUM as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.  
+7. POLICY_DEDUCTIBLE- POLICY_DEDUCTIBLE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+8. POLICY_CSL- POLICY_CSL as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+9. POLICY_BIND_DATE- POLICY_BIND_DATE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. Should always be lesser or equal to QUOTE_ACCEPTANCE_DATE. 
+10. AGENT_ID- AGENT_ID as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+11. PROSPECT_ID- Serial 8 digit unique number starting with PR in continuation in synthetic_df. 
+12. PROSPECT_STATE- Always "Texas".
+13. PROSPECT_COUNTY- POLICY_COUNTY as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+14. PROSPECT_CITY- POLICY_CITY as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+15. AUTO_MAKE- AUTO_MAKE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+16. AUTO_MODEL- AUTO_MODEL as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.  
+17. EXPECTED_CSL- Value same as POLICY_CSL 
+18. DEDUCTIBLE_LOOKED_FOR- Value same as POLICY_DEDUCTIBLE 
+19. EXPECTED_PREMIUM- EXPECTED_PREMIUM is POLICY_PREMIUM +/- 0% to 30%
+20. QUOTE_EXPECTED_BY_DATE- QUOTE_DATE - random number of days between 0 to 3 days
+21. COMPETITION_LEVEL- Random choice for each year between "Low Competition" with 27%, "Medium Competition" with 57%, rest "High Competition". 
+22. PAST_THREE_YRS_NO_CLAIMS- Random choice between "0" with 21%, "1" with 17%, "2" with 45%, and rest "3 and above" for base year. Each year the probability changes with +/- 3% to 15%. Ensure that the probabilities sum to 1. 
+23. PAST_THREE_YRS_CLAIM_AMT- CSL is first 3 digits before "/" from EXPECTED_CSL multiplied by 100000. For PAST_THREE_YRS_NO_CLAIMS as 0, value is 0.  For PAST_THREE_YRS_NO_CLAIMS as 1, value is random integer from 0 to 45% * CSL. For PAST_THREE_YRS_NO_CLAIMS as 2, value is random integer from 25% * CSL to 65% * CSL. For PAST_THREE_YRS_NO_CLAIMS as "3 and above", value is random integer from 65% * CSL to CSL.
+24. NO_OF_DRIVERS- NO_OF_DRIVERS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+25. COMPREHENSIVE_COVER- COMPREHENSIVE_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+26. COLLISION_COVER- COLLISION_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.  
+27. UNINSURED_MOTORIST- UNINSURED_MOTORIST as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+28. MEDICAL_BENEFITS- MEDICAL_BENEFITS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+29. PIP_COVER- PIP_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+30. ACCIDENT_FORGIVENESS- ACCIDENT_FORGIVENESS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.  
+31. ROADSIDE_ASSISTANCE- ROADSIDE_ASSISTANCE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.   
+32. LOSS_OF_USE- LOSS_OF_USE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.  
+33. ANTI_THEFT_DEVICE- ANTI_THEFT_DEVICE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.  
+34. SAFETY_SCORE- SAFETY_SCORE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. 
+35. QUOTE_DATE- QUOTE_ACCEPTANCE_DATE - random number of days between 0 to 10 days
+36. QUOTE_ACCEPTANCE_DATE- POLICY_BIND_DATE - random number of days between 0 to 7 days. 
+37. LOSS_REASON- NULL values. 
+
+					________________________________________________________
+
+I want to generate new records in a separate dataframe called df_2025 as per the below logic. Vectorize the code wherever possible. Give me the python code for the same. 
+
+APPLICATION_DATE from 01-January 2025 to 31-January-2025. 
+Number of records is length of number of records for December 2024 + 14%. Logic for record values is as follows. 
+Column Name: 
+1. APPLICATION_ID- Serial 8 digit unique number starting with APP continues from previous database. 
+2. APPLICATION_DATE- Random date from 01-January-2025 to 31-January-2025. 
+3. QUOTE_CONVERTED- NULL values
+4. POLICY_NUMBER- NULL values 
+5. CUSTOMER_ID- NULL values  
+6. POLICY_PREMIUM- NULL values 
+7. POLICY_DEDUCTIBLE- NULL values 
+8. POLICY_CSL- NULL values 
+9. POLICY_BIND_DATE- NULL values 
+10. AGENT_ID- Random AGENT_ID from AUTO_INSURANCE_AGENT_MASTER table provided AGENT_INACTIVE_FROM is NULL or AGENT_INACTIVE_FROM is less than APPLICATION_DATE.
+11. PROSPECT_ID- Serial 8 digit unique number starting with PR. Example PR71626089
+12. PROSPECT_STATE- Always "Texas".
+13. PROSPECT_COUNTY- POLICY_COUNTY as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest random COUNTY from uscities table for STATE "Texas".
+14. PROSPECT_CITY- POLICY_CITY as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest random Random CITY from uscities table for STATE "Texas" and PROSPECT_COUNTY value as COUNTY.
+15. AUTO_MAKE- AUTO_MAKE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest random AUTO_MAKE from AUTO_MAKE_MODEL table. 
+16. AUTO_MODEL- AUTO_MODEL as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER.For rest random AUTO_MODEL from AUTO_MAKE_MODEL table as per AUTO_MAKE. 
+17. EXPECTED_CSL- Value same as POLICY_CSL where POLICY_CSL is not NULL for this table. Where POLICY_CSL is NULL for this table, random choice between "100/300" 47%, "250/500" 38%, rest "500/1000".
+18. DEDUCTIBLE_LOOKED_FOR- Value same as POLICY_DEDUCTIBLE where POLICY_DEDUCTIBLE is not NULL for this table. Where POLICY_DEDUCTIBLE is NULL for this table, random choice between 250 with 15%, 500 with 45%, 1000 with 30%, and rest 2000 for each value of POLICY_CSL.
+19. EXPECTED_PREMIUM- Where POLICY_PREMIUM is not NULL in this table, EXPECTED_PREMIUM is POLICY_PREMIUM +/- 0% to 30%. Else, BASE_PREMIUM is random integer from 750 to 2500. COVER_PREMIUM = Sum of random integers ranging from 50 to 350 for each "YES" in COMPREHENSIVE_COVER, COLLISION_COVER, UNINSURED_MOTORIST, MEDICAL_BENEFITS, PIP_COVER, ACCIDENT_FORGIVENESS, ROADSIDE_ASSISTANCE, ANTI_THEFT_DEVICE. SAFETY_PREMIUM = SAFETY_SCORE * 1000. UMBRELLA_PREMIUM = 250 for 1000000, 500 for 2500000, 750 for 5000000 and 1000 for 7500000. POLICY_PREMIUM = BASE_PREMIUM + COVER_PREMIUM - SAFETY PREMIUM + UMBRELLA PREMIUM. EXPECTED_PREMIUM should be positive only. Value 750 if calculated value is 0 or negative. 
+20. QUOTE_EXPECTED_BY_DATE- APPLICATION_DATE + random number of days between 3 to 10 days
+21. COMPETITION_LEVEL- Random choice for each year between "Low Competition" with 27%, "Medium Competition" with 57%, rest "High Competition". 
+22. PAST_THREE_YRS_NO_CLAIMS- Random choice between "0" with 21%, "1" with 17%, "2" with 45%, and rest "3 and above" for base year. Each year the probability changes with +/- 3% to 15%. Ensure that the probabilities sum to 1. 
+23. PAST_THREE_YRS_CLAIM_AMT- CSL is first 3 digits before "/" from EXPECTED_CSL multiplied by 100000. For PAST_THREE_YRS_NO_CLAIMS as 0, value is 0.  For PAST_THREE_YRS_NO_CLAIMS as 1, value is random integer from 0 to 45% * CSL. For PAST_THREE_YRS_NO_CLAIMS as 2, value is random integer from 25% * CSL to 65% * CSL. For PAST_THREE_YRS_NO_CLAIMS as "3 and above", value is random integer from 65% * CSL to CSL.
+24. NO_OF_DRIVERS- NO_OF_DRIVERS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, random choice between 1, 2, 3, 4. 1 having highest probability, 2 little less probability, 3 even lesser probability and 4 least probability. 
+25. COMPREHENSIVE_COVER- COMPREHENSIVE_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, random choice between "YES" with 85.46% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.
+26. COLLISION_COVER- COLLISION_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 67.88% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+27. UNINSURED_MOTORIST- UNINSURED_MOTORIST as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 43.67% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.
+28. MEDICAL_BENEFITS- MEDICAL_BENEFITS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 23.89% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+29. PIP_COVER- PIP_COVER as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 67.21% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.
+30. ACCIDENT_FORGIVENESS- ACCIDENT_FORGIVENESS as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 24.68% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.  
+31. ROADSIDE_ASSISTANCE- ROADSIDE_ASSISTANCE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 74.32% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%.  
+32. LOSS_OF_USE- LOSS_OF_USE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 29.13% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+33. ANTI_THEFT_DEVICE- ANTI_THEFT_DEVICE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between "YES" with 29.13% and rest "NO" in base year. "YES" proportion changes by +/- random percentage from 7.5% to 15%. 
+34. SAFETY_SCORE- SAFETY_SCORE as per relevant POLICY_NUMBER from AUTO_INSURANCE_POLICY_MASTER. For rest, Random choice between NULL and random percentage between 15% to 97%. NULL being 78% in base year, rest random percentage. "NULL" proportion changes by +/- random percentage from 7.5% to 15%.
+35. QUOTE_DATE- NULL values
+36. QUOTE_ACCEPTANCE_DATE- NULL values
+37. LOSS_REASON- NULL values
+
+
+File path for all tables and save location file path is C:/Users/10741867/OneDrive - LTIMindtree/Documents/Datasets/Solution Datasets/Solution 1 - PNC Quote Conversion and Prioritization/Datasets/Regenerated Datasets/. 
+
+____________________________________________________________________________________________________________________________________________________________
+
+I want vectorized Python Code to filter data for the below tables for date range as specified. 
+
+Table Name: AUTO_INSURANCE_AGENT_MASTER
+Date Format: YYYY-MM-DD
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. AGENT_ORIGIN_DATE- Records from 01-January-2015 to 31-Dec-2024. To be filtered till 30-Sep-2024. Rest records to be deleted
+2. AGENT_STATUS- Value to be replaced as NULL For AGENT_STATUS "INACTIVE" or "LOST" where AGENT_INACTIVE_FROM date is beyond 30-Sep-2024. 
+3. AGENT_INACTIVE_FROM- Value to be replaced as NULL where AGENT_INACTIVE_FROM date is beyond 30-Sep-2024.
+4. AGENT_LOSS_REASON- Value to be replaced as NULL where AGENT_INACTIVE_FROM date is beyond 30-Sep-2024.
+5. AGENT_LOST_TO- Value to be replaced as NULL where AGENT_INACTIVE_FROM date is beyond 30-Sep-2024.
+New CSV File Name: AUTO_INSURANCE_AGENT_MASTER_OCT_2024
+
+Table Name: AUTO_INSURANCE_POLICY_MASTER
+Date Format: YYYY-MM-DD
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. POLICY_BIND_DATE- Records from 01-January-2015 to 31-Dec-2024. To be filtered till 30-Sep-2024. Rest records to be deleted
+New CSV File Name: AUTO_INSURANCE_POLICY_MASTER_OCT_2024
+
+Table Name: AUTO_INSURANCE_CLAIMS_MASTER
+Date format: YYYY-MM-DD
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. INCIDENT_DATE- Records from 01-January-2015 to 31-Dec-2024. To be filtered till 30-Sep-2024. Rest records to be deleted
+New CSV File Name: AUTO_INSURANCE_CLAIMS_MASTER_OCT_2024
+
+Table Name: AUTO_INSURANCE_QUOTE_CONVERSION_MASTER
+Date format: YYYY-MM-DD
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. APPLICATION_DATE- Records from 01-January-2015 to 31-Dec-2024. To be filtered till 31-Oct-2024. Rest records to be deleted
+2. QUOTE_DATE- Records from 01-January-2015 to 31-Dec-2024. To be filtered till 31-Oct-2024. Rest to be NULL.
+3. QUOTE_ACCEPTANCE_DATE- Records from 01-January-2015 to 31-Dec-2024. To be filtered till 31-Oct-2024. Rest to be NULL.
+4. Make specified columns as NULL for records with APPLICATION_DATE between 01-October_2024 to 31-October-2024- QUOTE_CONVERTED, POLICY_NUMBER, CUSTOMER_ID, 
+POLICY_PREMIUM, POLICY_DEDUCTIBLE, POLICY_CSL, POLICY_BIND_DATE, QUOTE_DATE, QUOTE_ACCEPTANCE_DATE, LOSS_REASON
+New CSV File Name: AUTO_INSURANCE_QUOTE_CONVERSION_MASTER_OCT_2024
+
+File path for all tables and save location file path is C:/Users/10741867/OneDrive - LTIMindtree/Documents/Datasets/Solution Datasets/Solution 1 - PNC Quote Conversion and Prioritization/Datasets/Regenerated Datasets/. 
+
+
+____________________________________________________________________________________________________________________________________________________________
+
+I want vectorized Python Code to filter only unique records and delete duplicate records for the below tables. 
+
+Table Name: AUTO_INSURANCE_AGENT_MASTER
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. AGENT_ID
+Overwrite CSV File Name: AUTO_INSURANCE_AGENT_MASTER
+
+Table Name: AUTO_INSURANCE_POLICY_MASTER
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. POLICY_NUMBER
+Overwrite CSV File Name: AUTO_INSURANCE_POLICY_MASTER
+
+Table Name: AUTO_INSURANCE_CLAIMS_MASTER
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. CLAIMS_NUMBER
+Overwrite CSV File Name: AUTO_INSURANCE_CLAIMS_MASTER
+
+Table Name: AUTO_INSURANCE_QUOTE_CONVERSION_MASTER
+Filtering on Column Name. Rest Columns to be maintained as is: 
+1. APPLICATION_ID
+Overwrite CSV File Name: AUTO_INSURANCE_QUOTE_CONVERSION_MASTER
+
+File path for all tables and save location file path is C:/Users/10741867/OneDrive - LTIMindtree/Documents/Datasets/Solution Datasets/Solution 1 - PNC Quote Conversion and Prioritization/Datasets/Regenerated Datasets/. 
+
